@@ -50,7 +50,7 @@ class MainRenderer:
             Clock(self.data, self.matrix, self.sleepEvent, duration=60)
             self.data.refresh_data()
 
-        
+        #Main render function
         while True:
             debug.info('Rendering...')
             #if self.status.is_offseason(self.data.date()):

@@ -22,6 +22,7 @@ from renderer.matrix import Matrix
 from update_checker import UpdateChecker
 from apscheduler.schedulers.background import BackgroundScheduler
 from renderer.loading_screen import Loading
+from renderer.mountain_screen import Mountain
 import debug
 import os
 
@@ -52,8 +53,11 @@ def run():
         matrix = Matrix(RGBMatrix(options = matrixOptions))
 
      #Riff to add loading screen here
-    loading = Loading(matrix)
-    loading.render()
+    # loading = Loading(matrix)
+    # loading.render()
+    mountain = Mountain(matrix)
+    mountain.render()
+
 
     # Read scoreboard options from config.json if it exists
     config = ScoreboardConfig("config", commandArgs, (matrix.width, matrix.height))
