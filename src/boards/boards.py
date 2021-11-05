@@ -79,6 +79,7 @@ class Boards:
                     data.pb_trigger = False
 
             board(data, matrix,sleepEvent)
+            debug.info(data.config.boards_off_day)
 
             if bord_index >= (len(data.config.boards_off_day) - 1):
                 return
