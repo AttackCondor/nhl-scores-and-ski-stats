@@ -13,6 +13,7 @@ from boards.pbdisplay import pbDisplay
 from boards.wxWeather import wxWeather
 from boards.wxAlert import wxAlert
 from boards.christmas import Christmas
+from boards.currentmountainstats import CurrentMountainStats
 from boards.seasoncountdown import SeasonCountdown
 from boards.wxForecast import wxForecast
 from boards.screensaver import screenSaver
@@ -78,7 +79,7 @@ class Boards:
                 else:
                     data.pb_trigger = False
 
-            board(data, matrix,sleepEvent)
+            board(data, matrix, sleepEvent)
             debug.info(data.config.boards_off_day)
 
             if bord_index >= (len(data.config.boards_off_day) - 1):
@@ -264,3 +265,6 @@ class Boards:
 
     def seasoncountdown(self, data, matrix,sleepEvent):
         SeasonCountdown(data, matrix, sleepEvent).draw()
+
+    def currentmountainstats(self, data, matrix,sleepEvent):
+        CurrentMountainStats(data, matrix, sleepEvent).render()
