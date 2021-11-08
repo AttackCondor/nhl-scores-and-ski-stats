@@ -13,39 +13,44 @@ REQUEST_TIMEOUT = 5
 
 TIMEOUT_TESTING = 0.001  # TO DELETE
 
-def get_mountain_forecast_json(mountain_id, app_id, app_key, hourly_interval = None, num_of_days = None):
+def get_mountain_forecast_json(mountain_id, app_id, app_key, hourly_interval = 12, num_of_days = 1):
     try:
         #attempt to retrieve the forecast, if hourly interval is not provided default to 12, if num_of_days is not provided default to 1
         data = requests.get(
-            FORMAT_URL.format(mountain_id, app_id, app_key, ("12",hourly_interval)[hourly_interval is not None], (1,num_of_days)[num_of_days is not None]), 
+            FORMAT_URL.format(mountain_id, app_id, app_key, hourly_interval, num_of_days), 
             timeout=REQUEST_TIMEOUT
         )
         return data.json()
     except requests.exceptions.RequestException as e:
         raise ValueError(e)
 
-def get_weekly_mountain_forecast_json(mountain_id, app_id, app_key, hourly_interval = None):
+def get_weekly_mountain_forecast_json(mountain_id, app_id, app_key, hourly_interval = 12):
     try:
         #attempt to retrieve the forecast, if hourly interval is not provided default to 12
         data = requests.get(
-            FORMAT_URL.format(mountain_id, app_id, app_key, ("12",hourly_interval)[hourly_interval is not None], 7), 
+            FORMAT_URL.format(mountain_id, app_id, app_key, hourly_interval, 7), 
             timeout=REQUEST_TIMEOUT
         )
         return data.json()
     except requests.exceptions.RequestException as e:
         raise ValueError(e)
 
-def get_todays_mountain_forecast(mountain_id, app_id, app_key, month, day, hour):
+def get_todays_mountain_forecast(mountain_id, app_id, app_key):
     try:
         #attempt to retrieve the most current forecast, TODO: parsing and removing extra data
         data = requests.get(
-            FORMAT_URL.format(mountain_id, app_id, app_key, 1, 1)
+            FORMAT_URL.format(mountain_id, app_id, app_key, 1, 6)
         )
     except requests.exceptions.RequestException as e:
         raise ValueError(e)
 
     data = data.json()
-    #Parse the 
+    #Parse the forecast for the times at 7am, 1pm, and 7pm
+    morn = data["forecast"][1]
+    mid = data["forecast"][2]
+    night = data["forecast"][3]
+    debug.info(morn)
+    debug.info(night)
 
 def get_mountain_name(mountain_id, app_id, app_key):
     try:
