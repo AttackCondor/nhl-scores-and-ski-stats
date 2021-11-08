@@ -1,4 +1,5 @@
 from PIL import Image
+from api.mountain.MountainForecast import MountainForecast
 from utils import get_file
 import api.mountain.mountaindata
 import debug
@@ -22,6 +23,9 @@ class CurrentMountainStats:
             self.matrix.draw_image((0,0), bg_img)
 
             self.matrix.render()
+            mountain_data = api.mountain.mountaindata.get_mountain_forecast(self.pref_mountain_id, self.app_id, self.app_key, 12, 1)
+            debug.info("Mountain data pulled from api....")
+            debug.info(mountain_data)
             self.matrix.draw_text(
                 (18, 7),
                 "hello world",
