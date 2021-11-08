@@ -26,7 +26,7 @@ class CurrentMountainStats:
 
 
             self.matrix.render()
-            # self.sleepEvent.wait(0.5)
+            self.sleepEvent.wait(10)
             # self.matrix.draw_text(
             #     (18, 7),
             #     self.team_abbrev,
