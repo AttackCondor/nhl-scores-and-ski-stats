@@ -183,7 +183,7 @@ class Data:
         self.ScChampions_id = self.check_stanley_cup_champion()
 
         #Ski statistics information
-        self.pref_mountain = self.get_pref_mountain_id()
+        self.pref_mountain_id = self.get_pref_mountain_id()
         self.mountain_forecast = self.refresh_mountain_forecast()
 
     #
