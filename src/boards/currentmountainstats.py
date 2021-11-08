@@ -26,8 +26,8 @@ class CurrentMountainStats:
                 (18, 7),
                 "hello world",
                 font=self.font,
-                fill=("47", "79", "79"),
-                backgroundColor=("220","220","220"),
+                fill=(47, 79, 79),
+                backgroundColor=(220,220,220),
                 backgroundOffset=[6, 1, 6, 1]
             )
             self.sleepEvent.wait(10)
