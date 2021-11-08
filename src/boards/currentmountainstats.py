@@ -27,7 +27,7 @@ class CurrentMountainStats:
             debug.info(mountain_data)
             debug.info(mountain_data.headers["content-type"])
             debug.info(mountain_data.url)
-            debug.info(mountain_data.body)
+            debug.info(mountain_data.request.body)
             self.matrix.draw_text(
                 (18, 7),
                 "hello world",
