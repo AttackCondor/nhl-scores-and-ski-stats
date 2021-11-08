@@ -108,7 +108,7 @@ class ScoreboardConfig:
 
         #Mountain Stats Preferences
         self.preferred_mountain = json["preferences"]["mountainstats"]["mountain"]
-        self.mountain_app_name = json["preferences"]["mountainstats"]["app_name"]
+        self.mountain_app_id = json["preferences"]["mountainstats"]["app_name"]
         self.moutnain_app_key = json["preferences"]["mountainstats"]["app_key"]
 
 
