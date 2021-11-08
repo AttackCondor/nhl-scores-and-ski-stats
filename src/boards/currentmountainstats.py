@@ -30,8 +30,8 @@ class CurrentMountainStats:
                 backgroundColor=(220,220,220),
                 backgroundOffset=[6, 1, 6, 1]
             )
+            self.matrix.render()
             self.sleepEvent.wait(10)
-            # self.matrix.render()
             # self.sleepEvent.wait(0.5)
             # self.matrix.draw_text(
             #     (37, 7),
