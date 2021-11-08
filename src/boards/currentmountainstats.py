@@ -31,6 +31,7 @@ class CurrentMountainStats:
             # debug.info(mountain_data.json())
             mountain_name = api.mountain.mountaindata.get_mountain_name(self.pref_mountain_id, self.app_id, self.app_key)
             debug.info(mountain_name)
+            mountain_data = api.mountain.mountaindata.get_todays_mountain_forecast(self.pref_mountain_id, self.app_id, self.app_key)
             self.matrix.draw_text(
                 (18, 7),
                 mountain_name,
