@@ -11,6 +11,7 @@ class CurrentMountainStats:
         self.font = data.config.layout.font
         self.app_id = data.config.mountain_app_id
         self.app_key = data.config.mountain_app_key
+        self.team_colors = data.config.team_colors
         self.sleepEvent = sleepEvent
         self.sleepEvent.clear()
 
@@ -21,20 +22,20 @@ class CurrentMountainStats:
             bg_img = Image.open(get_file('assets/images/mountain_bg.png'))
             self.matrix.draw_image((0,0), bg_img)
 
-            # team_color_main = self.team_colors.color("{}.primary".format(self.team_id))
-            # team_color_accent = self.team_colors.color("{}.text".format(self.team_id))
+            team_color_main = self.team_colors.color("{}.primary".format(self.team_id))
+            team_color_accent = self.team_colors.color("{}.text".format(self.team_id))
 
 
             self.matrix.render()
+            self.matrix.draw_text(
+                (18, 7),
+                "hello",
+                font=self.font,
+                fill=(team_color_accent['r'], team_color_accent['g'], team_color_accent['b']),
+                backgroundColor=(team_color_main['r'], team_color_main['g'], team_color_main['b']),
+                backgroundOffset=[6, 1, 6, 1]
+            )
             self.sleepEvent.wait(10)
-            # self.matrix.draw_text(
-            #     (18, 7),
-            #     self.team_abbrev,
-            #     font=self.font,
-            #     fill=(team_color_accent['r'], team_color_accent['g'], team_color_accent['b']),
-            #     backgroundColor=(team_color_main['r'], team_color_main['g'], team_color_main['b']),
-            #     backgroundOffset=[6, 1, 6, 1]
-            # )
             # self.matrix.render()
             # self.sleepEvent.wait(0.5)
             # self.matrix.draw_text(
