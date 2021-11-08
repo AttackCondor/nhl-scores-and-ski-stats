@@ -16,7 +16,7 @@ class CurrentMountainStats:
 
     def render(self):
         # Render the current weather and snow statistics for the preferred mountains
-        if self.team_id:
+        if True:
             self.matrix.clear()
             bg_img = Image.open(get_file('assets/images/mountain_bg.png'))
             self.matrix.draw_image((0,0), bg_img)
