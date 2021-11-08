@@ -9,8 +9,8 @@ class CurrentMountainStats:
         self.data = data
         self.matrix = matrix
         self.font = data.config.layout.font
-        self.app_id = data.config.app_id
-        self.app_key = data.config.app_key
+        self.app_id = data.config.mountain_app_id
+        self.app_key = data.config.mountain_app_key
         self.sleepEvent = sleepEvent
         self.sleepEvent.clear()
 
