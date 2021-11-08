@@ -565,7 +565,7 @@ class Data:
         """
         return "619002" #Mammoth in CA
 
-    def refresh_mountain_forecast():
+    def refresh_mountain_forecast(self):
         """
             TODO:create and use a mountain forecast api class to assist with gathering data
         """
