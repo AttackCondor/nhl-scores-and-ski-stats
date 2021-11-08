@@ -18,28 +18,18 @@ class CurrentMountainStats:
         # Render the current weather and snow statistics for the preferred mountains
         if True:
             self.matrix.clear()
-            bg_img = Image.open(get_file('assets/images/mountain_bg.png'))
-            self.matrix.draw_image((0,0), bg_img)
-
-            self.matrix.render()
-            # mountain_data = api.mountain.mountaindata.get_todays_mountain_forecast(self.pref_mountain_id, self.app_id, self.app_key, 11, 8, 15)
-            # debug.info("Mountain data pulled from api....")
-            # debug.info(mountain_data)
-            # debug.info(mountain_data.headers["content-type"])
-            # debug.info(mountain_data.url)
-            # debug.info(mountain_data.request.body)
-            # debug.info(mountain_data.json())
+            #Fetch and display the name of the mountain
             mountain_name = api.mountain.mountaindata.get_mountain_name(self.pref_mountain_id, self.app_id, self.app_key)
-            debug.info(mountain_name)
-            mountain_data = api.mountain.mountaindata.get_todays_mountain_forecast(self.pref_mountain_id, self.app_id, self.app_key)
             self.matrix.draw_text(
-                (18, 7),
+                (1, 1),
                 mountain_name,
                 font=self.font,
                 fill=(47, 79, 79),
                 backgroundColor=(220,220,220),
                 backgroundOffset=[6, 1, 6, 1]
             )
+
+            mountain_data = api.mountain.mountaindata.get_todays_mountain_forecast(self.pref_mountain_id, self.app_id, self.app_key)
             self.matrix.render()
             self.sleepEvent.wait(10)
             # self.sleepEvent.wait(0.5)
