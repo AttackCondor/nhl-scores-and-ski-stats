@@ -20,9 +20,9 @@ def get_mountain_forecast(mountain_id, app_id, app_key, hourly_interval = None, 
             FORMAT_URL.format(mountain_id, app_id, app_key, ("12",hourly_interval)[hourly_interval is not None], (1,num_of_days)[num_of_days is not None]), 
             timeout=REQUEST_TIMEOUT
         )
-        return data
     except requests.exceptions.RequestException as e:
         raise ValueError(e)
+    return data
 
 def get_weekly_mountain_forecast(mountain_id, app_id, app_key, hourly_interval = None):
     try:
