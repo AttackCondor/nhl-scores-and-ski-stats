@@ -558,7 +558,7 @@ class Data:
             return True
 
     #Daily Mountain Data
-    def get_pref_mountain_id():
+    def get_pref_mountain_id(self):
         """
             TODO:configure the mountain id to be a part of the setup script and config. 
             Currently only support for the single resort free api plan 
