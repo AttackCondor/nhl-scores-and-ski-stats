@@ -182,6 +182,9 @@ class Data:
         # Stanley cup champions
         self.ScChampions_id = self.check_stanley_cup_champion()
 
+        #Ski statistics information
+        self.pref_mountain = self.get_pref_mountain_id()
+        self.mountain_forecast = self.refresh_mountain_forecast()
 
     #
     # Date
@@ -554,6 +557,21 @@ class Data:
         except:
             return True
 
+    #Daily Mountain Data
+    def get_pref_mountain_id():
+        """
+            TODO:configure the mountain id to be a part of the setup script and config. 
+            Currently only support for the single resort free api plan 
+        """
+        return "619002" #Mammoth in CA
+
+    def refresh_mountain_forecast():
+        """
+            TODO:create and use a mountain forecast api class to assist with gathering data
+        """
+        pass
+
+    #Refresh data methods
     def refresh_data(self):
 
         debug.log("refresing data")
@@ -582,3 +600,6 @@ class Data:
 
         # Fetch the playoff data
         self.refresh_playoff()
+
+        # Update the Mountain forecast
+        self.refresh_mountain_forecast()

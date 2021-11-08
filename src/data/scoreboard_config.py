@@ -106,6 +106,11 @@ class ScoreboardConfig:
         self.wxalert_show_on_clock = json["boards"]["wxalert"]["show_on_clock"]
         self.wxalert_update_freq = json["boards"]["wxalert"]["update_freq"]
 
+        #Mountain Stats Preferences
+        self.preferred_mountain = json["preferences"]["mountainstats"]["mountain"]
+        self.mountain_app_name = json["preferences"]["mountainstats"]["app_name"]
+        self.moutnain_app_key = json["preferences"]["mountainstats"]["app_key"]
+
 
 
         # States
