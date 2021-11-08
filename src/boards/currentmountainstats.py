@@ -1,5 +1,4 @@
 from PIL import Image
-from api.mountain.MountainForecast import MountainForecast
 from utils import get_file
 import api.mountain.mountaindata
 import debug
