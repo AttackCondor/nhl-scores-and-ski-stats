@@ -22,14 +22,15 @@ class CurrentMountainStats:
             self.matrix.draw_image((0,0), bg_img)
 
             self.matrix.render()
-            mountain_data = api.mountain.mountaindata.get_todays_mountain_forecast(self.pref_mountain_id, self.app_id, self.app_key, 11, 8, 15)
-            debug.info("Mountain data pulled from api....")
-            debug.info(mountain_data)
-            debug.info(mountain_data.headers["content-type"])
-            debug.info(mountain_data.url)
-            debug.info(mountain_data.request.body)
-            debug.info(mountain_data.json())
+            # mountain_data = api.mountain.mountaindata.get_todays_mountain_forecast(self.pref_mountain_id, self.app_id, self.app_key, 11, 8, 15)
+            # debug.info("Mountain data pulled from api....")
+            # debug.info(mountain_data)
+            # debug.info(mountain_data.headers["content-type"])
+            # debug.info(mountain_data.url)
+            # debug.info(mountain_data.request.body)
+            # debug.info(mountain_data.json())
             mountain_name = api.mountain.mountaindata.get_mountain_name(self.pref_mountain_id, self.app_id, self.app_key)
+            debug.info(mountain_name)
             self.matrix.draw_text(
                 (18, 7),
                 mountain_name,
