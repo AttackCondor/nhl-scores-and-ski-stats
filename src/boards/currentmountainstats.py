@@ -21,10 +21,10 @@ class CurrentMountainStats:
             #Fetch and display the name of the mountain
             mountain_name = api.mountain.mountaindata.get_mountain_name(self.pref_mountain_id, self.app_id, self.app_key)
             self.matrix.draw_text(
-                (1, 1),
+                (1, 3),
                 mountain_name,
                 font=self.font,
-                fill=(47, 79, 79),
+                fill=(200, 0, 0),
                 backgroundColor=(220,220,220),
                 backgroundOffset=[6, 1, 6, 1]
             )
