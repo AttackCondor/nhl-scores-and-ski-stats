@@ -25,7 +25,7 @@ class CurrentMountainStats:
                 mountain_name,
                 font=self.font,
                 fill=(200, 0, 0),
-                backgroundColor=(220,220,220),
+                backgroundColor=(0,0,0),
                 backgroundOffset=[6, 1, 6, 1]
             )
 
