@@ -17,8 +17,10 @@ def get_mountain_forecast(mountain_id, app_id, app_key, hourly_interval = None, 
     try:
         #attempt to retrieve the forecast, if hourly interval is not provided default to 12, if num_of_days is not provided default to 1
         data = requests.get(
-            "http://api.weatherunlocked.com/api/resortforecast/619002?app_id=eb227ae7&app_key=dc723588891a6e17a9ab088f150fd38f&num_of_days=1", 
-            timeout=REQUEST_TIMEOUT, allow_redirects=False
+            "http://api.weatherunlocked.com/api/resortforecast/619002", 
+            params={"app_id":"eb227ae7","app_key":"dc723588891a6e17a9ab088f150fd38f","hourly_interval":"12","num_of_days":"1"},
+            timeout=REQUEST_TIMEOUT, 
+            allow_redirects=False
         )
     except requests.exceptions.RequestException as e:
         raise ValueError(e)
