@@ -22,7 +22,7 @@ class CurrentMountainStats:
             self.matrix.draw_image((0,0), bg_img)
 
             self.matrix.render()
-            mountain_data = api.mountain.mountaindata.get_mountain_forecast(self.pref_mountain_id, self.app_id, self.app_key, 12, 1)
+            mountain_data = api.mountain.mountaindata.get_todays_mountain_forecast(self.pref_mountain_id, self.app_id, self.app_key, 12, 1)
             debug.info("Mountain data pulled from api....")
             debug.info(mountain_data)
             debug.info(mountain_data.headers["content-type"])
@@ -32,7 +32,7 @@ class CurrentMountainStats:
             mountain_name = api.mountain.mountaindata.get_mountain_name(self.pref_mountain_id, self.app_id, self.app_key)
             self.matrix.draw_text(
                 (18, 7),
-                "hello world",
+                mountain_name,
                 font=self.font,
                 fill=(47, 79, 79),
                 backgroundColor=(220,220,220),
