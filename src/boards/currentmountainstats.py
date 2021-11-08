@@ -29,6 +29,7 @@ class CurrentMountainStats:
             debug.info(mountain_data.url)
             debug.info(mountain_data.request.body)
             debug.info(mountain_data.json())
+            mountain_name = api.mountain.mountaindata.get_mountain_name(self.pref_mountain_id, self.app_id, self.app_key)
             self.matrix.draw_text(
                 (18, 7),
                 "hello world",
