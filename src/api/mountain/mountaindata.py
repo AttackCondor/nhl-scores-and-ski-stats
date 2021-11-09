@@ -57,7 +57,7 @@ def get_todays_mountain_forecast(mountain_id, app_id, app_key):
     high = max(morn["base"]["temp_f"], mid["base"]["temp_f"], night["base"]["temp_f"])
     low = min(morn["base"]["temp_f"], mid["base"]["temp_f"], night["base"]["temp_f"])
     desc = mid["base"]["wx_desc"]
-    fresh_snow = sum(morn["base"]["freshsnow_in"], mid["base"]["freshsnow_in"], night["base"]["freshsnow_in"])
+    fresh_snow = sum(sum(morn["base"]["freshsnow_in"], mid["base"]["freshsnow_in"]), night["base"]["freshsnow_in"])
     forecast = {"high":high, "low":low, "desc":desc, "fresh_snow":fresh_snow}
     return forecast
     
