@@ -49,6 +49,10 @@ def get_todays_mountain_forecast(mountain_id, app_id, app_key):
     morn = data["forecast"][1]
     mid = data["forecast"][2]
     night = data["forecast"][3]
+    debug.info(morn)
+    debug.info(mid)
+    debug.info(night)
+
 
     high = max(morn["base"]["temp_max_f"], mid["base"]["temp_max_f"], night["base"]["temp_max_f"])
     low = min(morn["base"]["temp_min_f"], mid["base"]["temp_min_f"], night["base"]["temp_min_f"])
