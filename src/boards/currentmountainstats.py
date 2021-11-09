@@ -46,15 +46,22 @@ class CurrentMountainStats:
                 fill=(135, 206, 235),
                 backgroundColor=(0,0,0)
             )
+            # self.matrix.draw_text(
+            #     (22, 17),
+            #     str(mountain_data["fresh_snow"]),
+            #     font=self.font_medium,
+            #     fill=(200, 200, 200),
+            #     backgroundColor=(0,0,0)
+            # )            
             self.matrix.draw_text(
                 (22, 17),
-                str(mountain_data["fresh_snow"]),
+                "10",
                 font=self.font_medium,
                 fill=(200, 200, 200),
                 backgroundColor=(0,0,0)
             )
             self.matrix.draw_text(
-                (29, 22),
+                (29, (22, 29)[int(mountain_data["fresh_snow"]) >= 10],
                 "in",
                 font=self.font,
                 fill=(135, 206, 235),
@@ -82,6 +89,6 @@ class CurrentMountainStats:
             # self.matrix.render()
             # self.sleepEvent.wait(10)
             self.matrix.render()
-            self.sleepEvent.wait(10)
+            self.sleepEvent.wait(20)
         else:
             debug.info("No Stanley Cup Champions, going to next board")
