@@ -31,14 +31,14 @@ class CurrentMountainStats:
 
             mountain_data = api.mountain.mountaindata.get_todays_mountain_forecast(self.pref_mountain_id, self.app_id, self.app_key)
 
-            # self.sleepEvent.wait(0.5)
-            # self.matrix.draw_text(
-            #     (37, 7),
-            #     str(self.data.year),
-            #     font=self.font,
-            #     fill=(0, 0, 0),
-            #     backgroundColor=(200,200,200)
-            # )
+            self.matrix.draw_text(
+                (37, 7),
+                str(self.data.date),
+                font=self.font,
+                fill=(200, 0, 0),
+                backgroundColor=(0,0,0)
+            )
+
             # self.matrix.render()
             # self.sleepEvent.wait(0.5)
             # self.matrix.draw_text(
