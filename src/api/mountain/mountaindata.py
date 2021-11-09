@@ -54,8 +54,8 @@ def get_todays_mountain_forecast(mountain_id, app_id, app_key):
     debug.info(night)
 
 
-    high = max(morn["base"]["temp_max_f"], mid["base"]["temp_max_f"], night["base"]["temp_max_f"])
-    low = min(morn["base"]["temp_min_f"], mid["base"]["temp_min_f"], night["base"]["temp_min_f"])
+    high = max(morn["base"]["temp_f"], mid["base"]["temp_f"], night["base"]["temp_f"])
+    low = min(morn["base"]["temp_f"], mid["base"]["temp_f"], night["base"]["temp_f"])
     desc = mid["base"]["wx_desc"]
     fresh_snow = sum(morn["snow_in"], mid["snow_in"], night["snow_in"])
     forecast = {"high":high, "low":low, "desc":desc, "fresh_snow":fresh_snow}
