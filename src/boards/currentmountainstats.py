@@ -55,18 +55,21 @@ class CurrentMountainStats:
             # )            
             self.matrix.draw_text(
                 (22, 17),
-                "9",
+                str(mountain_data["fresh_snow"]),
                 font=self.font_medium,
                 fill=(200, 200, 200),
                 backgroundColor=(0,0,0)
             )
+            temp = mountain_data["fresh_snow"]
+            mountain_data["fresh_snow"] = "10"
             self.matrix.draw_text(
-                (29, (22, 29)[int(mountain_data["fresh_snow"]) >= 10]),
+                (29, (22, 29)[int(mountain_data["fresh_snow"]) >= 10],
                 "in",
                 font=self.font,
                 fill=(135, 206, 235),
                 backgroundColor=(0,0,0)
             )
+            mountain_data["fresh_snow"] = temp
 
             # self.matrix.render()
             # self.sleepEvent.wait(0.5)
