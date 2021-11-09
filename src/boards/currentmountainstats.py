@@ -33,6 +33,13 @@ class CurrentMountainStats:
             debug.info(mountain_data)
             self.matrix.draw_text(
                 (40, 1),
+                str("Fresh Snow"),
+                font=self.font,
+                fill=(200, 200, 200),
+                backgroundColor=(0,0,0)
+            )
+            self.matrix.draw_text(
+                (40, 30),
                 str(mountain_data["fresh_snow"]),
                 font=self.font,
                 fill=(200, 200, 200),
