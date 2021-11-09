@@ -8,7 +8,8 @@ class CurrentMountainStats:
         self.pref_mountain_id = data.pref_mountain_id
         self.data = data
         self.matrix = matrix
-        self.font = data.config.layout.font_medium
+        self.font = data.config.layout.font
+        self.font_medium = data.config.layout.font_medium
         self.app_id = data.config.mountain_app_id
         self.app_key = data.config.mountain_app_key
         self.sleepEvent = sleepEvent
@@ -23,7 +24,7 @@ class CurrentMountainStats:
             self.matrix.draw_text(
                 (1, 1),
                 mountain_name,
-                font=self.font,
+                font=self.font_medium,
                 fill=(200, 200, 200),
                 backgroundColor=(0,0,0),
                 backgroundOffset=[6, 1, 6, 1]
@@ -32,16 +33,23 @@ class CurrentMountainStats:
             mountain_data = api.mountain.mountaindata.get_todays_mountain_forecast(self.pref_mountain_id, self.app_id, self.app_key)
             debug.info(mountain_data)
             self.matrix.draw_text(
-                (1, 9),
-                str("Fresh Snow"),
+                (1, 12),
+                str("Fresh"),
                 font=self.font,
                 fill=(200, 200, 200),
                 backgroundColor=(0,0,0)
             )
             self.matrix.draw_text(
-                (42, 9),
-                str(mountain_data["fresh_snow"]),
+                (1, 19),
+                str("Snow"),
                 font=self.font,
+                fill=(200, 200, 200),
+                backgroundColor=(0,0,0)
+            )
+            self.matrix.draw_text(
+                (22, 12),
+                str(mountain_data["fresh_snow"]),
+                font=self.font_medium,
                 fill=(200, 200, 200),
                 backgroundColor=(0,0,0)
             )
