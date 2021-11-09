@@ -39,7 +39,7 @@ def get_todays_mountain_forecast(mountain_id, app_id, app_key):
     try:
         #attempt to retrieve the most current forecast, TODO: parsing and removing extra data
         data = requests.get(
-            FORMAT_URL.format(mountain_id, app_id, app_key, 1, 6)
+            FORMAT_URL.format(mountain_id, app_id, app_key, 6, 1)
         )
     except requests.exceptions.RequestException as e:
         raise ValueError(e)
@@ -49,8 +49,14 @@ def get_todays_mountain_forecast(mountain_id, app_id, app_key):
     morn = data["forecast"][1]
     mid = data["forecast"][2]
     night = data["forecast"][3]
-    debug.info(morn)
-    debug.info(night)
+
+    high = max(morn["base"]["temp_max_f"], mid["base"]["temp_max_f"], night["base"]["temp_max_f"])
+    low = min(morn["base"]["temp_min_f"], mid["base"]["temp_min_f"], night["base"]["temp_min_f"])
+    desc = mid["base"]["wx_desc"]
+    fresh_snow = sum(morn["snow_in"], mid["snow_in"], night["snow_in"])
+    forecast = {"high":high, "low":low, "desc":desc, "fresh_snow":fresh_snow}
+    return forecast
+    
 
 def get_mountain_name(mountain_id, app_id, app_key):
     try:

@@ -21,7 +21,7 @@ class CurrentMountainStats:
             #Fetch and display the name of the mountain
             mountain_name = api.mountain.mountaindata.get_mountain_name(self.pref_mountain_id, self.app_id, self.app_key)
             self.matrix.draw_text(
-                (1, 3),
+                (1, 1),
                 mountain_name,
                 font=self.font,
                 fill=(200, 0, 0),
@@ -30,8 +30,7 @@ class CurrentMountainStats:
             )
 
             mountain_data = api.mountain.mountaindata.get_todays_mountain_forecast(self.pref_mountain_id, self.app_id, self.app_key)
-            self.matrix.render()
-            self.sleepEvent.wait(10)
+
             # self.sleepEvent.wait(0.5)
             # self.matrix.draw_text(
             #     (37, 7),
@@ -60,5 +59,7 @@ class CurrentMountainStats:
             # )
             # self.matrix.render()
             # self.sleepEvent.wait(10)
+            self.matrix.render()
+            self.sleepEvent.wait(10)
         else:
             debug.info("No Stanley Cup Champions, going to next board")
