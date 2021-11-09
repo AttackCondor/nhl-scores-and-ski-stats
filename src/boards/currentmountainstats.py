@@ -63,7 +63,7 @@ class CurrentMountainStats:
             temp = mountain_data["fresh_snow"]
             mountain_data["fresh_snow"] = "10"
             self.matrix.draw_text(
-                (29, (22, 29)[int(mountain_data["fresh_snow"]) >= 10],
+                (29, (22, 29)[int(mountain_data["fresh_snow"]) >= 10]),
                 "in",
                 font=self.font,
                 fill=(135, 206, 235),
