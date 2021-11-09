@@ -55,7 +55,7 @@ class CurrentMountainStats:
             # )            
             self.matrix.draw_text(
                 (22, 17),
-                "10",
+                "9",
                 font=self.font_medium,
                 fill=(200, 200, 200),
                 backgroundColor=(0,0,0)
