@@ -32,7 +32,7 @@ class CurrentMountainStats:
             mountain_data = api.mountain.mountaindata.get_todays_mountain_forecast(self.pref_mountain_id, self.app_id, self.app_key)
 
             self.matrix.draw_text(
-                (37, 7),
+                (25, 1),
                 str(self.data.date),
                 font=self.font,
                 fill=(200, 0, 0),
