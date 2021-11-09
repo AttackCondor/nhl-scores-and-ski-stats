@@ -33,17 +33,17 @@ class CurrentMountainStats:
             mountain_data = api.mountain.mountaindata.get_todays_mountain_forecast(self.pref_mountain_id, self.app_id, self.app_key)
             debug.info(mountain_data)
             self.matrix.draw_text(
-                (1, 23),
+                (1, 16),
                 str("Fresh"),
                 font=self.font,
-                fill=(200, 200, 200),
+                fill=(135, 206, 235),
                 backgroundColor=(0,0,0)
             )
             self.matrix.draw_text(
                 (1, 23),
                 str("Snow"),
                 font=self.font,
-                fill=(200, 200, 200),
+                fill=(135, 206, 235),
                 backgroundColor=(0,0,0)
             )
             self.matrix.draw_text(
@@ -51,6 +51,13 @@ class CurrentMountainStats:
                 str(mountain_data["fresh_snow"]),
                 font=self.font_medium,
                 fill=(200, 200, 200),
+                backgroundColor=(0,0,0)
+            )
+            self.matrix.draw_text(
+                (29, 22),
+                "in",
+                font=self.font,
+                fill=(135, 206, 235),
                 backgroundColor=(0,0,0)
             )
 
