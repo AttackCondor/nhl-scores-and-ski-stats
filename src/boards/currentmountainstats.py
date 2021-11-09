@@ -33,7 +33,7 @@ class CurrentMountainStats:
 
             self.matrix.draw_text(
                 (25, 1),
-                str(self.data.date),
+                str(mountain_data["freshsnow"]),
                 font=self.font,
                 fill=(200, 0, 0),
                 backgroundColor=(0,0,0)
