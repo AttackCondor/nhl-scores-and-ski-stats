@@ -13,7 +13,7 @@ from boards.pbdisplay import pbDisplay
 from boards.wxWeather import wxWeather
 from boards.wxAlert import wxAlert
 from boards.christmas import Christmas
-from boards.currentmountainstats import CurrentMountainStats
+from boards.freshsnowstats import FreshSnowStats
 from boards.seasoncountdown import SeasonCountdown
 from boards.wxForecast import wxForecast
 from boards.screensaver import screenSaver
@@ -266,5 +266,5 @@ class Boards:
     def seasoncountdown(self, data, matrix,sleepEvent):
         SeasonCountdown(data, matrix, sleepEvent).draw()
 
-    def currentmountainstats(self, data, matrix,sleepEvent):
-        CurrentMountainStats(data, matrix, sleepEvent).render()
+    def freshsnowstats(self, data, matrix,sleepEvent):
+        FreshSnowStats(data, matrix, sleepEvent).render()

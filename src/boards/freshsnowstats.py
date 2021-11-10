@@ -3,7 +3,7 @@ from utils import get_file
 import api.mountain.mountaindata
 import debug
 
-class CurrentMountainStats:
+class FreshSnowStats:
     def __init__(self, data, matrix, sleepEvent):
         self.pref_mountain_id = data.pref_mountain_id
         self.data = data
