@@ -53,10 +53,10 @@ def run():
         matrix = Matrix(RGBMatrix(options = matrixOptions))
 
      #Riff to add loading screen here
-    # loading = Loading(matrix)
-    # loading.render()
-    mountain = Mountain(matrix)
-    mountain.render()
+    loading = Loading(matrix)
+    loading.render()
+    # mountain = Mountain(matrix)
+    # mountain.render()
 
 
     # Read scoreboard options from config.json if it exists
