@@ -46,15 +46,7 @@ class CurrentMountainStats:
                 fill=(135, 206, 235),
                 backgroundColor=(0,0,0)
             )
-            # self.matrix.draw_text(
-            #     (22, 17),
-            #     str(mountain_data["fresh_snow"]),
-            #     font=self.font_medium,
-            #     fill=(200, 200, 200),
-            #     backgroundColor=(0,0,0)
-            # )            
-            temp = mountain_data["fresh_snow"]
-            mountain_data["fresh_snow"] = "9"
+
             self.matrix.draw_text(
                 (22, 17),
                 str(mountain_data["fresh_snow"]),
@@ -62,6 +54,7 @@ class CurrentMountainStats:
                 fill=(200, 200, 200),
                 backgroundColor=(0,0,0)
             )
+
             self.matrix.draw_text(
                 ((29, 36)[int(mountain_data["fresh_snow"]) >= 10], 22),
                 "in",
@@ -69,28 +62,8 @@ class CurrentMountainStats:
                 fill=(135, 206, 235),
                 backgroundColor=(0,0,0)
             )
-            mountain_data["fresh_snow"] = temp
 
-            # self.matrix.render()
-            # self.sleepEvent.wait(0.5)
-            # self.matrix.draw_text(
-            #     (12, 14),
-            #     "STANLEY CUP",
-            #     font=self.font,
-            #     fill=(255,255,255),
-            # )
-            # self.matrix.render()
-            # self.sleepEvent.wait(0.5)
-            # self.matrix.draw_text(
-            #     (16, 21),
-            #     "CHAMPIONS",
-            #     font=self.font,
-            #     fill=(team_color_accent['r'], team_color_accent['g'], team_color_accent['b']),
-            #     backgroundColor=(team_color_main['r'], team_color_main['g'], team_color_main['b']),
-            #     backgroundOffset=[4, 1, 4, 1]
-            # )
-            # self.matrix.render()
-            # self.sleepEvent.wait(10)
+            
             self.matrix.render()
             self.sleepEvent.wait(20)
         else:
